@@ -1,0 +1,1 @@
+# teradata-cheat-sheet
