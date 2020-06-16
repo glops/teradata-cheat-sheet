@@ -40,3 +40,15 @@ diagnostic helpstats on for session ;
 show statistics values column id_filename on my_database.my_table ;
 ```
 
+## Java
+
+### Restart JVM on TD nodes
+
+```sql
+call SQLJ.ServerControl('JAVA', 'disable', a);
+call SQLJ.ServerControl('JAVA', 'shutdown', a);
+call SQLJ.ServerControl('JAVA', 'status', a);
+call SQLJ.ServerControl('JAVA', 'enable', a);
+```
+
+## Spool usage
