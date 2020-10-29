@@ -18,6 +18,12 @@ replace query logging
 	on my_database;
 ```
 
+### Flush query logging data from memory to table 
+
+```sql
+FLUSH QUERY LOGGING WITH ALL;
+```
+
 ## Explain plan
 
 ### Activate verbose explain plan for the session:
