@@ -58,3 +58,28 @@ call SQLJ.ServerControl('JAVA', 'enable', a);
 ```
 
 ## Spool usage
+
+
+## Casting
+
+### Cast CLOB to VARCHAR
+
+If the data contains in clob is bigger than 64k (32k unicode) it cannot be cast directly to varchar.
+
+First substr the first 32/64k characters then cast:
+
+```sql
+Select cast(substr(clobfield, 1, 32000) AS VARCHAR(32000))
+from my_database.my_table;
+```
+
+### Cast JSON to VARCHAR
+
+Same as for CLOB except that substr does not work on JSON.
+
+First cast to CLOB, substr the first 32/64k characters then cast to VARCHAR
+
+```sql
+Select CAST(substr(cast(jsonField as CLOB), 1, 32000) AS VARCHAR(32000))
+from my_database.my_table;
+```
