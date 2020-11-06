@@ -83,3 +83,16 @@ First cast to CLOB, substr the first 32/64k characters then cast to VARCHAR
 Select CAST(substr(cast(jsonField as CLOB), 1, 32000) AS VARCHAR(32000))
 from my_database.my_table;
 ```
+
+## Skew and data distribution
+
+### Check the distribution of a table
+
+```sql
+select 
+      hashamp(hashbucket(hashrow(<primary index>))) as amp
+    , count(*)
+from my_database.my_table
+group by 1
+order by 2 desc;
+```
