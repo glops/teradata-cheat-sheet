@@ -96,3 +96,15 @@ from my_database.my_table
 group by 1
 order by 2 desc;
 ```
+
+## Show create statements of all views and tables involved in a query
+
+This will returns also the DDL of the tables which are referenced in a foreign key
+
+It is especially usefull to retrieve objects used in imbricated views.
+
+```sql
+show select * from my_database.my_table;
+```
+
+Will returns one result set per create statement.
