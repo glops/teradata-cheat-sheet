@@ -1,5 +1,8 @@
 # Teradata Cheat Sheet
 
+## [Explain Plan](Explain_plan)
+## [Timezone](Timezone)
+
 ## Query logging
 
 ### Activate basic query logging  :
@@ -24,19 +27,6 @@ replace query logging
 FLUSH QUERY LOGGING WITH ALL;
 ```
 
-## Explain plan
-
-### Activate verbose explain plan for the session:
-
-```sql
-diagnostic verboseexplain on for session ;
-```
-
-### Activate stats information in explain 
-
-```sql
-diagnostic helpstats on for session ;
-```
 
 ## Statistics
 
