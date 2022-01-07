@@ -98,3 +98,21 @@ show select * from my_database.my_table;
 ```
 
 Will returns one result set per create statement.
+
+# Metadata
+
+## Get the metadata for the column of a view
+
+When querying DBC.ColumnsV for a view, only the name and comment are available.
+
+To get all the information, use:
+
+```sql
+help column DBC.QryLogV.*;
+```
+
+Or for a set of columns:
+
+```sql
+help column DBC.QryLogV.ProcID,DBC.QryLogV.CollectTimeStamp,DBC.QryLogV.QueryID;
+```
