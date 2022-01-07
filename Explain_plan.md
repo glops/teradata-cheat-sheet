@@ -22,6 +22,13 @@ DYNAMIC EXPLAIN
 Select ...;
 ```
 
+## Explain plan in XML
+
+```sql
+[DYNAMIC] EXPLAIN IN XML
+Select ...;
+```
+
 ### Force use of dynamic plan
 
 If the dynamic explain starts with:
